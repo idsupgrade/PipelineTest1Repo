@@ -1,0 +1,8 @@
+applications:
+- name: pb-sample-node-form
+  framework: node
+  memory: 64M
+  instances: 1
+  host: pb-sample-node-alpha
+  path: .
+  command: node app.js

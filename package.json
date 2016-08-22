@@ -1,0 +1,13 @@
+{
+  "name": "sample-node-form",
+  "description": "A sample form written in Node",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "4.3.2",
+    "npm": "3.5.3"
+  },
+  "dependencies": {
+    "express": "4.10"
+  }
+}
