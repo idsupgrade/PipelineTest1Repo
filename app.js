@@ -5,6 +5,11 @@ var express = require("express");
 
 var app = express();
 
+var appConfig = require("./config"),
+    nconf = require("nconf");
+
+// configure logging, configuration, i18n early
+appConfig.init();
 
 var migratingProject;
 
@@ -21,7 +26,7 @@ function beginMonitoring(project) {
 }
 
 
-app.get('/',
+app.get("/",
     function (req, res) {
         var welcomeResponse = "<HEAD>" +
             "<title>Migration App</title>\n" +
@@ -57,18 +62,22 @@ app.get('/',
     });
 
 
-app.get('/monitor', function (req, res) {
+app.get("/monitor", function (req, res) {
     beginMonitoring(req.query.project);
-    res.redirect(302, '/');
+    res.redirect(302, "/");
 });
 
-app.get('/reset', /* @callback */ function (req, res) {
+app.get("/reset", /* @callback */ function (req, res) {
     resetMonitoring();
-    res.redirect(302, '/');
+    res.redirect(302, "/");
 });
 
-app.get('/test', /* @callback */ function (req, res) {
+app.get("/test", /* @callback */ function (req, res) {
     res.send(req.query);
+});
+
+app.get("/env", /* @callback */ function (req, res) {
+	res.send(nconf.get("FOO_BAR"));
 });
 
 app.listen(port);
