@@ -77,7 +77,17 @@ app.get("/test", /* @callback */ function (req, res) {
 });
 
 app.get("/env", /* @callback */ function (req, res) {
-	res.send(nconf.get("FOO_BAR"));
+	var myResponse = "<HEAD>" +
+            "<title>Migration App</title>\n" +
+            "</HEAD>\n" +
+            "<BODY>\n" +
+            "<P>\n" +
+            "Hello! Welcome to the Migration app.<br>\n" + 
+            "Value of FOO_BAR is " + nconf.get("FOO_BAR") + "\n" +
+            "</P>\n" +
+			"</BODY>";
+
+	res.send(myResponse);
 });
 
 app.listen(port);
