@@ -8,6 +8,7 @@
     "npm": "3.5.3"
   },
   "dependencies": {
-    "express": "4.10"
+    "express": "4.10",
+    "nconf": "0.8.2"
   }
 }
