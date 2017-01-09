@@ -1,7 +1,7 @@
 applications:
-- name: kp-beta3-sample-node-form
+- name: kp-deploy-sample-node-form
   framework: node
   memory: 64M
   instances: 1
-  host: kp-beta3-sample-node-alpha
+  host: kp-deploy-sample-node-alpha
   path: .
