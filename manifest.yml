@@ -1,8 +1,8 @@
 applications:
-- name: pb-sample-node-form
+- name: kp-sample-node-form
   framework: node
   memory: 64M
   instances: 1
-  host: pb-sample-node-alpha
+  host: kp-sample-node-alpha
   path: .
   command: node app.js
