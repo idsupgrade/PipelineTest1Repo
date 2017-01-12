@@ -29,12 +29,12 @@ function beginMonitoring(project) {
 app.get("/",
     function (req, res) {
         var welcomeResponse = "<HEAD>" +
-            "<title>Migration App</title>\n" +
+            "<title>Sample Node Form</title>\n" +
             "</HEAD>\n" +
             "<BODY>\n" +
             "<P>\n" +
-            "Hello! Welcome to the Migration app.<br>\n" + 
-            "Which Project would you like to migrate?\n" +
+            "Hello! Welcome to the Sample Node Form<br>\n" + 
+            "What is your favorite word today?\n" +
             "</P>\n" +
             "<FORM action=\"/monitor\" method=\"get\">\n" +
             "<P>\n" +
@@ -48,14 +48,14 @@ app.get("/",
                 "<META http-equiv=\"refresh\" content=\"5; URL=http://" +
                 req.headers.host +
                 "/\">\n" +
-                "<title>Migration App</title>\n" +
+                "<title>Sample Node Form</title>\n" +
                 "</HEAD>\n" +
                 "<BODY>\n" +
                 "<P>\n" +
-                "Migrating project ...<br>\n" +
+                "You said ...<br>\n" +
                 migratingProject + "<br>" +
                 "</P>\n" +
-                "<A href=\"/reset\">Monitor another phrase</A>\n" +
+                "<A href=\"/reset\">Go Back</A>\n" +
                 "</BODY>";
             res.send(monitoringResponse);
         }
