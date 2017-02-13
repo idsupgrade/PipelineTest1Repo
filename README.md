@@ -1,2 +1,2 @@
 # Welcome to sample-node-form!
-A simple node.js app with a form
+A sample node.js app with a form
