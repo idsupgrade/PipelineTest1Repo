@@ -82,10 +82,13 @@ app.get("/env", /* @callback */ function (req, res) {
             "</HEAD>\n" +
             "<BODY>\n" +
             "<P>\n" +
-            "Hello! Welcome to the Migration app.<br>\n" + 
-            "Value of FOO_BAR is " + nconf.get("FOO_BAR") + "\n" +
-            "</P>\n" +
-			"</BODY>";
+            "Hello! Welcome to the Migration app.<br>\n";
+	if (req.query && req.query.var) {
+            myResponse += "Value of " + req.query.var + " is " + nconf.get(req.query.var) + "\n";
+	} else {
+            myResponse += "Value of FOO_BAR is " + nconf.get("FOO_BAR") + "\n";
+	}
+        myResponse += "</P>\n" + "</BODY>";
 
 	res.send(myResponse);
 });
